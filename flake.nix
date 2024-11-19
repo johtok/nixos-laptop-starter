@@ -84,6 +84,7 @@
         modules = [
           ./laptop.nix
           ./xfce.nix
+          ./i3.nix
         ];
       };
     };

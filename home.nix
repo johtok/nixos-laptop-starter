@@ -117,6 +117,7 @@ in {
   imports = [
     nix-index-database.hmModules.nix-index
     ./xfce-home.nix
+    ./i3-home.nix
   ];
 
   home.stateVersion = "24.05";
