@@ -12,7 +12,14 @@
   inputs.nix-index-database.url = "github:Mic92/nix-index-database";
   inputs.nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-  outputs = inputs:
+  inputs.lanzaboote = {
+    url = "github:nix-community/lanzaboote/v0.4.1";
+
+    # Optional but recommended to limit the size of your system closure.
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
+  outputs = {self, nixpkgs, lanzaboote, ...}@inputs:
     with inputs; let
       secrets = builtins.fromJSON (builtins.readFile "${self}/secrets.json");
 
@@ -86,6 +93,8 @@
           ./xfce.nix
           ./i3.nix
           ./dwm.nix
+          lanzaboote.nixosModules.lanzaboote
+          ./lanzaboote.nix
         ];
       };
     };

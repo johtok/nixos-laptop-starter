@@ -62,19 +62,17 @@
   ];
 
   stable-packages = with pkgs; [
-    # FIXME: customize these stable packages to your liking for the languages that you use
 
-    # FIXME: you can add plugins, change keymaps etc using (jeezyvim.nixvimExtend {})
-    # https://github.com/LGUG2Z/JeezyVim#extending
+    #secure boot 8-) 
+    sbctl
+    #Vim stuff
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
 
-    # FIXME: disable this if you don't want to use the starship promp
-
-    # FIXME: disable this if you don't want to use the starship prompt
     # key tools
     gh # for bootstrapping
     just
+    
     
     #c/cpp
     cmake
