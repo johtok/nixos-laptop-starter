@@ -8,17 +8,21 @@
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
     bat
+    bitwarden-cli
     bottom
     coreutils
     curl
+    docker
     du-dust
     fd
     ffmpeg_7-full
     findutils
     firefox
     fx
+    gh
     git
     git-crypt
+    gitlab
     grex
     htop
     hyperfine
@@ -26,11 +30,9 @@
     jaq
     jq
     killall
-    logseq
-    podman
-    docker
     lazydocker
     lazygit
+    logseq
     mosh
     navi
     neofetch
@@ -42,21 +44,23 @@
     nushellPlugins.query
     ouch
     pixi
+    podman
     procs
     ripgrep
     sd
     sox
+    spotify
     tealdeer
     tmux
     tree
+    tridactyl-native
     unzip
     vim
     vscode
     wget
     xcp
-    zip
-    tridactyl-native
     zellij
+    zip
   ];
 
   stable-packages = with pkgs; [
