@@ -71,6 +71,7 @@
 
     # key tools
     gh # for bootstrapping
+    gitlab
     just
     
     
