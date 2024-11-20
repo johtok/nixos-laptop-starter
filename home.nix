@@ -63,8 +63,6 @@
 
   stable-packages = with pkgs; [
 
-    #secure boot 8-) 
-    sbctl
     #Vim stuff
     vimPlugins.nvchad
     vimPlugins.nvchad-ui

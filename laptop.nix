@@ -12,10 +12,15 @@
   ];
  
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;  
-  boot.blacklistedKernelModules = [ "elan_i2c" ];
+  boot= {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+     
+    };
+    kernelPackages = pkgs.linuxPackages_latest;  
+    blacklistedKernelModules = [ "elan_i2c" ];
+  };
 
   time.timeZone = "Europe/Copenhagen";
 
@@ -70,10 +75,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
 
   # FIXME: uncomment the next line to enable SSH
   services.openssh.enable = true;
