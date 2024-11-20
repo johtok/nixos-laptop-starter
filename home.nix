@@ -19,10 +19,8 @@
     findutils
     firefox
     fx
-    gh
     git
     git-crypt
-    gitlab
     grex
     htop
     hyperfine
