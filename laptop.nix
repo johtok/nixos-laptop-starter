@@ -18,8 +18,12 @@
       efi.canTouchEfiVariables = true;
      
     };
+    #getting latest kernel!!
     kernelPackages = pkgs.linuxPackages_latest;  
+    #fixing touchpad
     blacklistedKernelModules = [ "elan_i2c" ];
+    #supporting ntfs
+    supportedFilesystems = [ "ntfs" ];
   };
 
   time.timeZone = "Europe/Copenhagen";

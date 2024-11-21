@@ -22,6 +22,7 @@
     git
     git-crypt
     grex
+    gparted
     htop
     hyperfine
     inferno
@@ -62,7 +63,7 @@
   ];
 
   stable-packages = with pkgs; [
-
+    sbctl
     #Vim stuff
     vimPlugins.nvchad
     vimPlugins.nvchad-ui

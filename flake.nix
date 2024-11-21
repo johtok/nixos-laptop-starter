@@ -93,8 +93,8 @@
           ./xfce.nix
           ./i3.nix
           ./dwm.nix
-         # lanzaboote.nixosModules.lanzaboote
-         # ./lanzaboote.nix
+          lanzaboote.nixosModules.lanzaboote
+          ./lanzaboote.nix
         ];
       };
     };
