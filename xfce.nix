@@ -3,6 +3,7 @@
 {
   environment = {
     systemPackages = with pkgs; [
+      albert
       blueman
       chromium
       deja-dup
@@ -20,6 +21,7 @@
       libreoffice
       orca
       pavucontrol
+      nightfox-gtk-theme
       qalculate-gtk
       thunderbird
       wmctrl
@@ -46,6 +48,8 @@
       xfce.xfce4-whiskermenu-plugin
       xfce.xfce4-xkb-plugin
       xfce.xfdashboard
+      xfce.xfwm4
+      xfce.xfwm4-themes
       xorg.xev
       xsel
       xtitle
