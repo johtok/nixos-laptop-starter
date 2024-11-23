@@ -1,5 +1,6 @@
 {
   #secrets,
+  lib,
   pkgs,
   username,
   nix-index-database,
@@ -42,7 +43,6 @@
     nushellPlugins.polars
     nushellPlugins.query
     ouch
-    pixi
     podman
     procs
     ripgrep
@@ -138,8 +138,12 @@ in {
     ++[
       # pkgs.some-package
       # pkgs.unstable.some-other-package
-        (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (pkgs.buildFHSUserEnv {
+        name = "pixi";
+        runScript = "pixi";
+        targetPkgs = pkgs: with pkgs; [ pixi ];
+      })
     ];
 
   fonts.fontconfig.enable = true;
