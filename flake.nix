@@ -89,11 +89,8 @@
         hostname = "slim";
         username = "johtok"; # FIXME: replace with your own username!
         modules = [
-          ./laptop.nix
-          ./xfce.nix
-#         ./i3.nix
-          ./dwm.nix
-#         ./dk.nix
+          ./platform/laptop.nix
+          ./user_interface/default.nix
           lanzaboote.nixosModules.lanzaboote
           ./lanzaboote.nix
         ];
