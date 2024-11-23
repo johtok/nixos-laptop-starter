@@ -9,9 +9,9 @@
 
   services.xserver.windowManager.dk = {
     enable = true;
-    package = pkgs.dk.overrideAttrs {
-      src = ./resources/dk;
-    };
+#    package = pkgs.dk.overrideAttrs {
+#      src = ./resources/dk;
+#    };
   };
 # services.xserver.windowManager.dwm.package = pkgs.dwm.override {
 #  patches = [

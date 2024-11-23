@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  #FIXME dont just have all this stuff here.... have it seperately 8-)
   environment = {
     systemPackages = with pkgs; [
       albert
@@ -107,6 +108,8 @@
       };
       desktopManager.xfce.enable = true;
     };
+    displayManager.defaultSession = "xfce";
+
   };
 
   sound.enable = true;

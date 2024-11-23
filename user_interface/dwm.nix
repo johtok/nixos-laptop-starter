@@ -1,12 +1,19 @@
 { pkgs, ... }:
 
 {
-pkgs.dmenu
-services.xserver.windowManager.dwm.enable = true;
-services.xserver.windowManager.dwm.package = pkgs.dwm.overrideAttrs {
-  src = ./resources/dwm-6.5;
-};
+  environment = {
+    systemPackages = with pkgs; [
+      dmenu
+      dwmbar
+    ];
+  };
 
+  services.xserver.windowManager.dwm = {
+    enable = true;
+    package = pkgs.dwm.overrideAttrs {
+      src = ./resources/dwm-6.5;
+    };
+  };
 # services.xserver.windowManager.dwm.package = pkgs.dwm.override {
 #  patches = [
 #    # for local patch files, replace with relative path to patch file

@@ -10,7 +10,6 @@
   [
     ./hardware-configuration.nix
   ];
- 
   # Bootloader.
   boot= {
     loader = {
@@ -24,10 +23,36 @@
     blacklistedKernelModules = [ "elan_i2c" ];
     #supporting ntfs
     supportedFilesystems = [ "ntfs" ];
+    #amdgpu support
+    initrd.kernelModules = [ "amdgpu" ];
+    # hipernation stuff
+    zfs.forceImportRoot = false;
+    zfs.allowHibernation = true;
   };
+  #swap things
+  swapDevices = [ {
+    device = "/var/lib/swapfile";
+    randomEncryption.enable = true; 
+    size=16*1024;
+  } ];
+   
+  zramSwap.enable = true;
+
+  powerManagement.enable = true;
+  powerManagement.powertop.enable = true;
+  
+  #GPU stuff
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+    amdvlk
+
+  ];
 
   time.timeZone = "Europe/Copenhagen";
-
+  time.hardwareClockInLocalTime = true;
   environment.pathsToLink = ["/share/nushell"];
   environment.shells = [pkgs.nushell];
 
