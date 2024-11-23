@@ -91,8 +91,9 @@
         modules = [
           ./laptop.nix
           ./xfce.nix
-          ./i3.nix
+#         ./i3.nix
           ./dwm.nix
+#         ./dk.nix
           lanzaboote.nixosModules.lanzaboote
           ./lanzaboote.nix
         ];
